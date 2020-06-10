@@ -1,0 +1,25 @@
+[
+        {
+          "currentExecutionGuid" : "LAST",
+          "packageToMonitor" : "PKG001",
+          "keepHistory" : "",
+          "coverageNeutralLimit" : 60,
+          "type" : "DEVC"
+        },
+        {
+            "currentExecutionGuid" : "LAST",
+            "packageToMonitor" : "PKG002",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          },
+          {
+            "currentExecutionGuid" : "LAST",
+            "packageToMonitor" : "PKG003",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          }                  
+    
+    
+]

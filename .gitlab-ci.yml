@@ -1,0 +1,80 @@
+image: node:latest
+
+stages:
+  - init 
+  - lint 
+  - build
+  - test
+  - deploy
+ 
+before_script:
+  - pwd
+  - whoami
+  - export PATH=$PATH:/opt/rh/rh-nodejs10/root/usr/bin
+  - echo "$CI_BUILD_REPO"
+  - echo "$CI_BUILD_NAME"
+  - echo "$CI_PIPELINE_ID"
+  - echo "$CI_PIPELINE_IID"
+  - echo "$CI_COMMIT_REF_SLUG"
+  - echo "$NPM_REGISTRY"
+
+cache:
+  paths:
+   - node_modules/    
+
+init-ci:
+  stage: init
+  tags:
+   - linux
+  script:    
+    - npm config set registry "$NPM_REGISTRY"
+    - npm install
+
+
+eslint:
+ stage: lint
+ tags:
+  - linux
+ script:
+  - npm run-script lint
+ dependencies:
+  - init-ci
+
+unit-test: 
+   stage: test 
+   tags:
+    - linux
+   script:      
+    - npm run-script serveNTest
+   dependencies:
+    - init-ci
+    - eslint
+    - build-app
+    
+build-app: 
+   stage: build 
+   tags:
+    - linux
+   script: 
+     - npm run-script build
+   dependencies:
+    - init-ci
+    - eslint
+   artifacts:
+    paths:
+    - dist/
+    expire_in: 1 day
+
+deploy-abap: 
+   stage: deploy 
+   tags:
+    - linux
+   script: 
+     - npm run-script deploy
+   dependencies:
+    - init-ci
+    - eslint
+    - build-app
+    - unit-test
+   only:
+    - master

@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table items="{testMethods>/ZCBC_ADASH_TEST_METHODS}">
+		<headerToolbar>
+			<Toolbar>
+				<ToggleButton pressed="._watching" icon="sap-icon://show" text="Watch" press="onWatchThis"/>
+			</Toolbar>
+		</headerToolbar>
+		<items>
+			<ColumnListItem type="Active" press="onNavigateTo" class="sapUiTinyMargin">
+				<cells>
+					<core:Fragment fragmentName="adash.ui.monitor.fragment.testMethod" type="XML"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column id="colId">
+				<header></header>
+			</Column>
+		</columns>
+	</Table>
+</core:FragmentDefinition>

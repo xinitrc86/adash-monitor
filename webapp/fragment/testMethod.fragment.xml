@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<HBox justifyContent="Start" width="100%">
+		<HBox height="100%" alignItems="Center" justifyContent="Start" alignContent="Center">
+			<VBox>
+				<HBox>
+					<VBox>
+						<core:Icon color="{= ${testMethods>status} === '1' ? 'Positive' : 'Negative' }" size="1.5em"
+							src="{= ${testMethods>status} === '1' ? 'sap-icon://accept' : 'sap-icon://decline' }"/>
+					</VBox>
+					<VBox width="100%" alignContent="Start" justifyContent="Center" class="sapUiSmallMarginBegin">
+						<Text text="{testMethods>testMethod}"/>
+					</VBox>
+				</HBox>
+			</VBox>
+		</HBox>
+		<VBox justifyContent="Start" alignItems="Start" class="sapUiMediumMarginBegin">
+			<Text text="{testMethods>failureHeader}" wrapping="true" class="sapUiMediumMarginBegin"/>
+			<Text text="{testMethods>failureDetails}" wrapping="true" class="sapUiMediumMarginBegin"/>
+		</VBox>
+	</HBox>
+</core:FragmentDefinition>
