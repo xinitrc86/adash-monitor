@@ -9,20 +9,17 @@
 		"node-qunit-puppeteer": "^2.0.2",
 		"qunit": "^2.10.0",		
 		"start-server-and-test": "^1.11.0",
-		"ui5-middleware-route-proxy": "^1.0.6",
-		"ui5-task-nwabap-deployer": "^1.0.12"
+		"ui5-middleware-route-proxy": "^1.0.6"
 	},
 	"scripts": {
-		"build": "ui5 build --clean-dest --exclude-task=ui5-task-nwabap-deployer --include-task=generateManifestBundle generateCachebusterInfo",
+		"build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
 		"lint": "eslint webapp",
 		"start": "ui5 serve",
 		"test": "node-qunit-puppeteer http://localhost:8080/test/testsuite.qunit.html",
-		"deploy": "ui5 build --exclude-task=* --include-task=ui5-task-nwabap-deployer",
 		"serveNTest": "start-server-and-test start http://localhost:8080 test"
 	},
 	"ui5": {
-		"dependencies": [
-			"ui5-task-nwabap-deployer",
+		"dependencies": [			
 			"ui5-middleware-route-proxy"
 		]
 	},

@@ -42,7 +42,7 @@ builder:
       sections:
       - mode: raw
         filters:
-        - adash/ui/monitor/regenerator-runtime/runtime.js
+        - "**/**"
       - mode: preload
         filters:
         - adash/ui/monitor/manifest.json        
@@ -58,16 +58,5 @@ builder:
      optimize: true
      addTryCatchRestartWrapper: true
      usePredefineCalls: true          
-  customTasks:
-      - name: ui5-task-nwabap-deployer
-        afterTask: generateVersionInfo
-        configuration: 
-          resources:
-            pattern: "**/*.*"
-          ui5:
-            language: EN
-            package: <<>>>
-            bspContainer: <<<>>>
-            bspContainerText: ADASH
-            calculateApplicationIndex: true     
+
 
