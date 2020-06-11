@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"adash/ui/monitor/controller/pathController",
-	"adash/ui/monitor/controller/pathFactory"
-], function (Controller, PathController, PathFactory) {
+	"adash/ui/monitor/controller/pathFactory",
+	"sap/ui/model/json/JSONModel"
+], function (Controller, PathController, PathFactory, JSONModel) {
 	"use strict";
 
 	return Controller.extend("adash.ui.monitor.controller.rootResults", {
@@ -21,16 +22,34 @@ sap.ui.define([
 				this.getView().byId("titleBox")
 			);
 
-			this._applyInitialSetup();
+			let that = this;
+			this._adashGroups = new JSONModel("/adash-cli.json");
+			this._adashGroups.attachRequestCompleted(data => {
+				let errorObject = data.getParameter('errorobject');				
+				if (errorObject) {
+					console.log('ADASH Cli Integration is off');
+					that._applyInitialSetup();
+				}
+				else {
+					let groups = data.getSource().getData();
+					let aPackages = groups.all.map(packageToMonitor => {
+						return new sap.ui.model.Filter("name", "EQ", packageToMonitor.toUpperCase());
+					});
+					that._setRootDisplayPackages(aPackages);
+				}
+			});
+
+
 
 		},
 		onWatchThis: function (oEvent) {
 			this._watching = !this._watching;
-			if (this._watching === true)
-				{this._watchId = window.setInterval(function () {
+			if (this._watching === true) {
+				this._watchId = window.setInterval(function () {
 					this._bindTable(this._currentPath);
 					this._oTable.setBusyIndicatorDelay(20000);
-				}.bind(this), 2000);} // 2 seconds
+				}.bind(this), 2000);
+			} // 2 seconds
 			else {
 				window.clearInterval(this._watchId);
 				this._watchId = null;
@@ -55,18 +74,18 @@ sap.ui.define([
 			var vKey = oEvent.getSource().getSelectedKey();
 			this._sorter = [];
 			switch (vKey) {
-			case "failing":
-				this._sorter.push(new sap.ui.model.Sorter("status", false));
-				this._sorter.push(new sap.ui.model.Sorter("type", false));
-				break;
-			case "uncovered":
-				this._sorter.push(new sap.ui.model.Sorter("uncovered", true));
-				this._sorter.push(new sap.ui.model.Sorter("type", false));
-				break;
-			case "type":
-				this._sorter.push(new sap.ui.model.Sorter("type", false));
-				this._sorter.push(new sap.ui.model.Sorter("status", false));
-				break;
+				case "failing":
+					this._sorter.push(new sap.ui.model.Sorter("status", false));
+					this._sorter.push(new sap.ui.model.Sorter("type", false));
+					break;
+				case "uncovered":
+					this._sorter.push(new sap.ui.model.Sorter("uncovered", true));
+					this._sorter.push(new sap.ui.model.Sorter("type", false));
+					break;
+				case "type":
+					this._sorter.push(new sap.ui.model.Sorter("type", false));
+					this._sorter.push(new sap.ui.model.Sorter("status", false));
+					break;
 			}
 
 			this._sorter.push(new sap.ui.model.Sorter("name", false));
@@ -82,14 +101,15 @@ sap.ui.define([
 		},
 		_setAutoRefresh: function (bSet) {
 
-			if (bSet === true)
-				{this._intervalId = window.setInterval(function () {
+			if (bSet === true) {
+				this._intervalId = window.setInterval(function () {
 					this._bindTable(this._currentPath);
-				}.bind(this), 300000);} // 5 minutes
-			else
-				{window.clearInterval(this._intervalId);}
+				}.bind(this), 300000);
+			} // 5 minutes
+			else { window.clearInterval(this._intervalId); }
 
 		},
+
 		_applyInitialSetup: function () {
 
 			var oSetup = this.getOwnerComponent().getModel("setup");
@@ -104,38 +124,34 @@ sap.ui.define([
 						aPackages.push(new sap.ui.model.Filter("name", "EQ", rowData.packageToMonitor));
 					}
 
-					var aPackageFilter = new sap.ui.model.Filter({
-						and: false,
-						filters: aPackages
-					});
-
-					var setupFilter = new sap.ui.model.Filter({
-						and: true,
-						filters: [
-							new sap.ui.model.Filter("execution", "EQ", "LAST"),
-							aPackageFilter
-						]
-
-					});
-
-					that._sorter = that._getInitialSorting();
-					var oInitialPath = {
-						path: "/ZCBC_ADASH_RESULTS",
-						fragment: "adash.ui.monitor.fragment.testables",
-						filter: setupFilter
-					};
-
-					that._setupTable();
-					var fNavToInitialSetup = that._goTo.bind(that, oInitialPath);
-					that._pathController.pushPath("ADASH - Abap Unit Dashboard",
-						"root",
-						fNavToInitialSetup
-					);
-					fNavToInitialSetup();
+					that._setRootDisplayPackages.bind(that)(aPackages);
 
 				});
 			oSetup.read("/ZCBC_ADASH_SETUP");
 
+		},
+		_setRootDisplayPackages: function (aPackages) {
+			var aPackageFilter = new sap.ui.model.Filter({
+				and: false,
+				filters: aPackages
+			});
+			var setupFilter = new sap.ui.model.Filter({
+				and: true,
+				filters: [
+					new sap.ui.model.Filter("execution", "EQ", "LAST"),
+					aPackageFilter
+				]
+			});
+			this._sorter = this._getInitialSorting();
+			var oInitialPath = {
+				path: "/ZCBC_ADASH_RESULTS",
+				fragment: "adash.ui.monitor.fragment.testables",
+				filter: setupFilter
+			};
+			this._setupTable();
+			var fNavToInitialSetup = this._goTo.bind(this, oInitialPath);
+			this._pathController.pushPath("ADASH - Abap Unit Dashboard", "root", fNavToInitialSetup);
+			fNavToInitialSetup();
 		},
 		_goTo: function (oPath) {
 
@@ -187,3 +203,5 @@ sap.ui.define([
 
 	});
 });
+
+

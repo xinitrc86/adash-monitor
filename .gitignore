@@ -1,3 +1,4 @@
+.env
 fioriHtmlRunner.html
 .*/fioriHtmlRunner.html
 visual_ext_index.html
@@ -17,4 +18,3 @@ APIExternalProducer.js
 /mta_archives/
 /dist/
 node_modules
-.env

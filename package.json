@@ -7,7 +7,7 @@
 		"@ui5/cli": "^2.2.6",
 		"eslint": "^7.1.0",
 		"node-qunit-puppeteer": "^2.0.2",
-		"qunit": "^2.10.0",		
+		"qunit": "^2.10.0",
 		"start-server-and-test": "^1.11.0",
 		"ui5-middleware-route-proxy": "^1.0.6"
 	},
@@ -19,9 +19,10 @@
 		"serveNTest": "start-server-and-test start http://localhost:8080 test"
 	},
 	"ui5": {
-		"dependencies": [			
+		"dependencies": [
 			"ui5-middleware-route-proxy"
 		]
 	},
-	"dependencies": {}
+	"dependencies": {
+	}
 }

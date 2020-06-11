@@ -19,11 +19,11 @@ server:
     afterMiddleware: compression
     configuration:      
       /sap/opu/: 
-        target: UI5_TASK_NWABAP_DEPLOYER__SERVER
+        target: ADASH_HOST
         auth:    
           client: 200      
-          user: UI5_TASK_NWABAP_DEPLOYER__USER
-          pass: UI5_TASK_NWABAP_DEPLOYER__PASSWORD          
+          user: ADASH_USERNAME
+          pass: ADASH_PASSWORD
 builder:
   resources:
     excludes:
