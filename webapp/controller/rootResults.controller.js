@@ -31,8 +31,8 @@ sap.ui.define([
 					that._applyInitialSetup();
 				}
 				else {
-					let groups = data.getSource().getData();
-					let aPackages = groups.all.map(packageToMonitor => {
+					let packageGroup = data.getSource().getData();
+					let aPackages = packageGroup.map(packageToMonitor => {
 						return new sap.ui.model.Filter("name", "EQ", packageToMonitor.toUpperCase());
 					});
 					that._setRootDisplayPackages(aPackages);
