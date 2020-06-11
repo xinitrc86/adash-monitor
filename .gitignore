@@ -17,3 +17,4 @@ APIExternalProducer.js
 /mta_archives/
 /dist/
 node_modules
+.env
