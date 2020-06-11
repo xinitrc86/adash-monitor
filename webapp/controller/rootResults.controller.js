@@ -101,9 +101,7 @@ sap.ui.define([
 					var aPackages = [];
 					for (var row in data) {
 						var rowData = data[row];
-						that.executionGuid = rowData.currentExecutionGuid;
 						aPackages.push(new sap.ui.model.Filter("name", "EQ", rowData.packageToMonitor));
-
 					}
 
 					var aPackageFilter = new sap.ui.model.Filter({
@@ -114,7 +112,7 @@ sap.ui.define([
 					var setupFilter = new sap.ui.model.Filter({
 						and: true,
 						filters: [
-							new sap.ui.model.Filter("execution", "EQ", that.executionGuid),
+							new sap.ui.model.Filter("execution", "EQ", "LAST"),
 							aPackageFilter
 						]
 
