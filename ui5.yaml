@@ -25,6 +25,12 @@ server:
           client: 200
           user: ADASH_USERNAME
           pass: ADASH_PASSWORD
+      /sap/zadash/: 
+        target: ADASH_HOST
+        auth:    
+          client: 200      
+          user: ADASH_USERNAME
+          pass: ADASH_PASSWORD
 builder:
   resources:
     excludes:

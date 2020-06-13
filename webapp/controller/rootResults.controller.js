@@ -38,9 +38,16 @@ sap.ui.define([
 					that._setRootDisplayPackages(aPackages);
 				}
 			});
-
-
-
+		},
+		onTestPackage: function(oEvent) {
+			var oSource = oEvent.getSource();
+			oSource.setBusy(true);
+			var oAPI = new JSONModel();
+			var that = this;
+			oAPI.loadData("/sap/zadash/packages/zfi_payreq_approval/test").then(function(data){
+				that._bindTable(that._currentPath);
+				oSource.setBusy(true)
+			});
 		},
 		onWatchThis: function (oEvent) {
 			this._watching = !this._watching;
