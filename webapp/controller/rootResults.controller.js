@@ -32,8 +32,8 @@ sap.ui.define([
 				}
 				else {
 					let packageGroup = data.getSource().getData();
-					let aPackages = packageGroup.map(packageToMonitor => {
-						return new sap.ui.model.Filter("name", "EQ", packageToMonitor.toUpperCase());
+					let aPackages = packageGroup.map(name => {
+						return new sap.ui.model.Filter("name", "EQ", name.toUpperCase());
 					});
 					that._setRootDisplayPackages(aPackages);
 				}
@@ -128,7 +128,7 @@ sap.ui.define([
 					var aPackages = [];
 					for (var row in data) {
 						var rowData = data[row];
-						aPackages.push(new sap.ui.model.Filter("name", "EQ", rowData.packageToMonitor));
+						aPackages.push(new sap.ui.model.Filter("name", "EQ", rowData.name));
 					}
 
 					that._setRootDisplayPackages.bind(that)(aPackages);

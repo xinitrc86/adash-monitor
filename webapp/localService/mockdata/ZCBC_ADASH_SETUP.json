@@ -1,21 +1,21 @@
 [
         {
           "currentExecutionGuid" : "LAST",
-          "packageToMonitor" : "PKG001",
+          "name" : "zadash",
           "keepHistory" : "",
           "coverageNeutralLimit" : 60,
           "type" : "DEVC"
         },
         {
             "currentExecutionGuid" : "LAST",
-            "packageToMonitor" : "PKG002",
+            "name" : "zother_pkg",
             "keepHistory" : "",
             "coverageNeutralLimit" : 60,
             "type" : "DEVC"
           },
           {
             "currentExecutionGuid" : "LAST",
-            "packageToMonitor" : "PKG003",
+            "name" : "za_third_one",
             "keepHistory" : "",
             "coverageNeutralLimit" : 60,
             "type" : "DEVC"

@@ -14,10 +14,10 @@
    <EntityType Name="ZCBC_ADASH_SETUPType" sap:label="Adash setup" sap:content-version="1">
     <Key>
      <PropertyRef Name="currentExecutionGuid"/>
-     <PropertyRef Name="packageToMonitor"/>
+     <PropertyRef Name="name"/>
     </Key>
     <Property Name="currentExecutionGuid" Type="Edm.String" Nullable="false" MaxLength="32" sap:display-format="UpperCase"/>
-    <Property Name="packageToMonitor" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Package"/>
+    <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Package"/>
     <Property Name="keepHistory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Keep History" sap:quickinfo="Indicates if we should keep the test data history"/>
     <Property Name="coverageNeutralLimit" Type="Edm.Byte" sap:label="Coverage Neutral" sap:quickinfo="Indicates the last value (%) where coverage is neutral"/>
     <Property Name="type" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"/>
