@@ -18,10 +18,11 @@ server:
   - name: ui5-middleware-route-proxy
     afterMiddleware: compression
     configuration:      
+      debug: true
       /sap/opu/: 
         target: ADASH_HOST
         auth:    
-          client: 200      
+          client: 200
           user: ADASH_USERNAME
           pass: ADASH_PASSWORD
 builder:
