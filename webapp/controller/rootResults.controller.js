@@ -41,12 +41,15 @@ sap.ui.define([
 		},
 		onTestPackage: function(oEvent) {
 			var oSource = oEvent.getSource();
+			var oData = oSource.getBindingContext().getObject();
 			oSource.setBusy(true);
 			var oAPI = new JSONModel();
 			var that = this;
-			oAPI.loadData("/sap/zadash/packages/zfi_payreq_approval/test").then(function(data){
+			oAPI.loadData(`/sap/zadash/${oData.typeRaw}/${oData.name}/test`)
+			.catch(function(error){})
+			.finally(function(data){
 				that._bindTable(that._currentPath);
-				oSource.setBusy(true)
+				oSource.setBusy(false)
 			});
 		},
 		onWatchThis: function (oEvent) {
