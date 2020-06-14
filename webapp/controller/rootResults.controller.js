@@ -15,7 +15,7 @@ sap.ui.define([
 		_autoRefresh: false,
 
 		onInit: function () {
-
+			this._watching = false;
 			this._pathController = new PathController();
 			this._pathFactory = new PathFactory();
 			this._pathController.Init(
@@ -41,34 +41,42 @@ sap.ui.define([
 		},
 		onTestPackage: function(oEvent) {
 			var oSource = oEvent.getSource();
-			var oData = oSource.getBindingContext().getObject();
-			oSource.setBusy(true);
+			var oBinding = oSource.getBindingContext();
+			var oData = oBinding.getObject();
+			this._testComponentAPI(oData.typeRaw,oData.name,oSource);
+		},
+		_testComponentAPI: function(type,name,oSource){
 			var oAPI = new JSONModel();
-			var that = this;
-			oAPI.loadData(`/sap/zadash/${oData.typeRaw}/${oData.name}/test`)
+			var that = this;			
+			oSource.setBusy(true);
+			oSource.setBusyIndicatorDelay(50);
+			oAPI.loadData(`/sap/zadash/${type}/${name}/test`)
+			.then(function(	){			
+				if (that._watching === true) {
+					that._bindTable(that._currentPath);
+					setTimeout(() => {
+						oSource.setBusy(true);
+						that._testComponentAPI(type,name,oSource);
+					}, 2222);
+				}
+					
+			})
 			.catch(function(error){})
-			.finally(function(data){
-				that._bindTable(that._currentPath);
-				oSource.setBusy(false)
+			.finally(function(data){				
+				if (oSource)
+					oSource.setBusy(false);				
 			});
 		},
 		onWatchThis: function (oEvent) {
+			var oSync = sap.ui.getCore().byId('isCheckingButtonId');
 			this._watching = !this._watching;
 			if (this._watching === true) {
-				this._watchId = window.setInterval(function () {
-					this._bindTable(this._currentPath);
-					this._oTable.setBusyIndicatorDelay(20000);
-				}.bind(this), 2000);
-			} // 2 seconds
-			else {
-				window.clearInterval(this._watchId);
-				this._watchId = null;
-			}
-
+				this._testComponentAPI(this._currentPath.type,this._currentPath.name,oSync)
+			} 
 		},
 
 		onNavigateTo: function (oEvent) {
-
+			this._watching = false;
 			var oData = oEvent.getSource().getBindingContext().getObject();
 			var oPath = this._pathFactory.buildFor(oData);
 			var fNavCallback = this._goTo.bind(this, oPath);

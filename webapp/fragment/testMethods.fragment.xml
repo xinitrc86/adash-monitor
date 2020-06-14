@@ -3,6 +3,7 @@
 		<headerToolbar>
 			<Toolbar>
 				<ToggleButton pressed="._watching" icon="sap-icon://show" text="Watch" press="onWatchThis"/>
+				<Button id='isCheckingButtonId' enabled="false" type='Transparent'/>
 			</Toolbar>
 		</headerToolbar>
 		<items>
