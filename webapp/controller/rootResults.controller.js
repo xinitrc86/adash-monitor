@@ -122,7 +122,7 @@ sap.ui.define([
 			if (bSet === true) {
 				this._intervalId = window.setInterval(function () {
 					this._bindTable(this._currentPath);
-				}.bind(this), 300000);
+				}.bind(this), 120000);
 			} // 5 minutes
 			else { window.clearInterval(this._intervalId); }
 

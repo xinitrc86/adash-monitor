@@ -13,7 +13,9 @@
 					</customHeader>
 					<subHeader>
 						<OverflowToolbar>
-							<ToggleButton icon="sap-icon://synchronize" pressed="._autoRefresh" text="Auto refresh" press="onToggleAutoRefresh"/>
+							<ToggleButton icon="sap-icon://synchronize" 
+							tooltip="Fetches results every 2 minutes"
+							pressed="._autoRefresh" text="Auto refresh" press="onToggleAutoRefresh"/>
 							<ToolbarSpacer/>
 							<Label text="Sorting order"/>
 							<ComboBox id="sortingCombo" selectedKey="failing" change="onFilterChange">
