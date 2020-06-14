@@ -53,12 +53,13 @@ sap.ui.define([
 			oAPI.loadData(`/sap/zadash/${type}/${name}/test`)
 			.then(function(	){			
 				if (that._watching === true) {
-					that._bindTable(that._currentPath);
+					
 					setTimeout(() => {
 						oSource.setBusy(true);
 						that._testComponentAPI(type,name,oSource);
 					}, 2222);
 				}
+				that._bindTable(that._currentPath);
 					
 			})
 			.catch(function(error){})
