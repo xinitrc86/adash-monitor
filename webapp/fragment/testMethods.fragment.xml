@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-	<Table items="{testMethods>/ZCV_ADASH_TEST_METHODS}">
+	<Table items="{testMethods>/ZCV_ADASH_TEST_METHODS_C}">
 		<headerToolbar>
 			<Toolbar>
 				<ToggleButton pressed="._watching" icon="sap-icon://show" text="Watch" press="onWatchThis"/>

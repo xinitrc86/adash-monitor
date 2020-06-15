@@ -43,7 +43,7 @@ sap.ui.define([
 				]
 			});
 			return {
-				path: "/ZCV_ADASH_RESULTS",
+				path: "/ZCV_ADASH_RESULTS_C",
 				name: sPackage,
 				type: "DEVC",
 				fragment: "adash.ui.monitor.fragment.testables",
@@ -53,7 +53,7 @@ sap.ui.define([
 		},
 		_buildTestMethodPath: function (sName, sType) {
 			var oPath = {
-				path: "testMethods>/ZCV_ADASH_TEST_METHODS",
+				path: "testMethods>/ZCV_ADASH_TEST_METHODS_C",
 				fragment: "adash.ui.monitor.fragment.testMethods",
 				name: sName,
 				type: sType,

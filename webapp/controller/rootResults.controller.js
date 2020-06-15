@@ -146,7 +146,7 @@ sap.ui.define([
 					that._setRootDisplayPackages.bind(that)(aPackages);
 
 				});
-			oSetup.read("/ZCV_ADASH_SETUP");
+			oSetup.read("/ZCV_ADASH_SETUP_C");
 
 		},
 		_setRootDisplayPackages: function (aPackages) {
@@ -163,7 +163,7 @@ sap.ui.define([
 			});
 			this._sorter = this._getInitialSorting();
 			var oInitialPath = {
-				path: "/ZCV_ADASH_RESULTS",
+				path: "/ZCV_ADASH_RESULTS_C",
 				fragment: "adash.ui.monitor.fragment.testables",
 				filter: setupFilter
 			};

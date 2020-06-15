@@ -14,7 +14,7 @@
 	<edmx:DataServices m:DataServiceVersion="2.0">
 		<Schema xml:lang="en" Namespace="ZCV_ADASH_TEST_METHODS_C" 
 			xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1">
-			<EntityType sap:content-version="1" sap:label="Summary for packages" Name="ZCV_ADASH_RESULTSType">
+			<EntityType sap:content-version="1" sap:label="Summary for packages" Name="ZCV_ADASH_RESULTS_CType">
 				<Key>
 					<PropertyRef Name="execution"/>
 					<PropertyRef Name="name"/>
@@ -40,7 +40,7 @@
 				<Property Name="coveragePercentage" Type="Edm.Int32"/>
 			</EntityType>
 			<EntityContainer Name="ZCV_ADASH_TEST_METHODS_C_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true">
-				<EntitySet sap:content-version="1" Name="ZCV_ADASH_RESULTS" sap:deletable="false" sap:updatable="false" sap:creatable="false" EntityType="ZCV_ADASH_TEST_METHODS_C.ZCV_ADASH_RESULTSType"/>
+				<EntitySet sap:content-version="1" Name="ZCV_ADASH_RESULTS_C" sap:deletable="false" sap:updatable="false" sap:creatable="false" EntityType="ZCV_ADASH_TEST_METHODS_C.ZCV_ADASH_RESULTS_CType"/>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C/$metadata" rel="self"/>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C/$metadata" rel="latest-version"/>
