@@ -49,7 +49,7 @@ builder:
       sections:
       - mode: raw
         filters:
-        - "**/**"
+        - "webapp/**"
       - mode: preload
         filters:
         - adash/ui/monitor/manifest.json        
