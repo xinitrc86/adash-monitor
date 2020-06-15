@@ -8,9 +8,9 @@ sap.ui.define([
 	return {
 
 		init: function (bWithRandomData) {
-			sMockServers.push(this.createMockServer(bWithRandomData,"ZCBC_ADASH_RESULTS_CDS"));
-			sMockServers.push(this.createMockServer(bWithRandomData,"ZCBC_ADASH_SETUP_CDS"));
-			sMockServers.push(this.createMockServer(bWithRandomData,"ZCBC_ADASH_TEST_METHODS_CDS"));
+			sMockServers.push(this.createMockServer(bWithRandomData,"ZCV_ADASH_RESULTS_C_CDS"));
+			sMockServers.push(this.createMockServer(bWithRandomData,"ZCV_ADASH_SETUP_C_CDS"));
+			sMockServers.push(this.createMockServer(bWithRandomData,"ZCV_ADASH_TEST_METHODS_C_CDS"));
 			return this;
 
 		},

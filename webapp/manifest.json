@@ -14,25 +14,25 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"ZCBC_ADASH_SETUP_CDS": {
-				"uri": "/sap/opu/odata/sap/ZCBC_ADASH_SETUP_CDS/",
+			"ZCV_ADASH_SETUP_C_CDS": {
+				"uri": "/sap/opu/odata/sap/ZCV_ADASH_SETUP_C_CDS/",
 				"type": "OData",
 				"settings": {
-					"localUri": "localService/ZCBC_ADASH_SETUP_CDS/metadata.xml"
+					"localUri": "localService/ZCV_ADASH_SETUP_C_CDS/metadata.xml"
 				}
 			},
-			"ZCBC_ADASH_RESULTS_CDS": {
-				"uri": "/sap/opu/odata/sap/ZCBC_ADASH_RESULTS_CDS/",
+			"ZCV_ADASH_RESULTS_C_CDS": {
+				"uri": "/sap/opu/odata/sap/ZCV_ADASH_RESULTS_C_CDS/",
 				"type": "OData",
 				"settings": {
-					"localUri": "localService/ZCBC_ADASH_RESULTS_CDS/metadata.xml"
+					"localUri": "localService/ZCV_ADASH_RESULTS_C_CDS/metadata.xml"
 				}
 			},
-			"ZCBC_ADASH_TEST_METHODS_CDS": {
-				"uri": "/sap/opu/odata/sap/ZCBC_ADASH_TEST_METHODS_CDS/",
+			"ZCV_ADASH_TEST_METHODS_C_CDS": {
+				"uri": "/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C_CDS/",
 				"type": "OData",
 				"settings": {
-					"localUri": "localService/ZCBC_ADASH_TEST_METHODS_CDS/metadata.xml"
+					"localUri": "localService/ZCV_ADASH_TEST_METHODS_C_CDS/metadata.xml"
 				}
 			}		
 		}
@@ -99,7 +99,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "ZCBC_ADASH_SETUP_CDS"
+				"dataSource": "ZCV_ADASH_SETUP_C_CDS"
 			},
 			"": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
@@ -108,7 +108,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "ZCBC_ADASH_RESULTS_CDS"
+				"dataSource": "ZCV_ADASH_RESULTS_C_CDS"
 			},
 			"testMethods": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
@@ -117,7 +117,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "ZCBC_ADASH_TEST_METHODS_CDS"
+				"dataSource": "ZCV_ADASH_TEST_METHODS_C_CDS"
 			}
 		},
 		"resources": {

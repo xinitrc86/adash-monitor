@@ -10,8 +10,8 @@
   <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
  </edmx:Reference>
  <edmx:DataServices m:DataServiceVersion="2.0">
-  <Schema Namespace="ZCBC_ADASH_TEST_METHODS_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-   <EntityType Name="ZCBC_ADASH_TEST_METHODSType" sap:label="Test methods of an entry" sap:content-version="1">
+  <Schema Namespace="ZCV_ADASH_TEST_METHODS_C_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+   <EntityType Name="ZCV_ADASH_TEST_METHODS_CType" sap:label="Test methods of an entry" sap:content-version="1">
     <Key>
      <PropertyRef Name="execution"/>
      <PropertyRef Name="name"/>
@@ -28,11 +28,11 @@
     <Property Name="failureHeader" Type="Edm.String" MaxLength="1250" sap:display-format="UpperCase" sap:label="" sap:quickinfo="Character field, length 1250"/>
     <Property Name="failureDetails" Type="Edm.String" MaxLength="1250" sap:display-format="UpperCase" sap:label="" sap:quickinfo="Character field, length 1250"/>
    </EntityType>
-   <EntityContainer Name="ZCBC_ADASH_TEST_METHODS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-    <EntitySet Name="ZCBC_ADASH_TEST_METHODS" EntityType="ZCBC_ADASH_TEST_METHODS_CDS.ZCBC_ADASH_TEST_METHODSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+   <EntityContainer Name="ZCV_ADASH_TEST_METHODS_C_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+    <EntitySet Name="ZCV_ADASH_TEST_METHODS_C" EntityType="ZCV_ADASH_TEST_METHODS_C_CDS.ZCV_ADASH_TEST_METHODS_CType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
    </EntityContainer>
-   <atom:link rel="self" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCBC_ADASH_TEST_METHODS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-   <atom:link rel="latest-version" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCBC_ADASH_TEST_METHODS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+   <atom:link rel="self" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+   <atom:link rel="latest-version" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
   </Schema>
  </edmx:DataServices>
 </edmx:Edmx>
