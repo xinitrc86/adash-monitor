@@ -1,0 +1,69 @@
+specVersion: '2.0'
+metadata:
+  name: adash
+type: application
+framework:
+  name: SAPUI5
+  version: 1.76.0
+  libraries:
+    - name: sap.ui.core
+    - name: sap.m
+    - name: sap.f
+    - name: sap.suite.ui.commons
+    - name: sap.ui.layout    
+    - name: themelib_sap_belize
+      optional: true    
+server:
+  customMiddleware:
+  - name: ui5-middleware-route-proxy
+    afterMiddleware: compression
+    configuration:      
+      debug: true
+      /sap/opu/: 
+        target: ADASH_HOST
+        auth:    
+          client: 200
+          user: ADASH_USERNAME
+          pass: ADASH_PASSWORD
+      /sap/zadash/: 
+        target: ADASH_HOST
+        auth:    
+          client: 200      
+          user: ADASH_USERNAME
+          pass: ADASH_PASSWORD
+builder:
+  resources:
+    excludes:
+      - "/test/*.*"
+      - "/localService/*.*"
+      - "**.zip"
+  bundles:
+  - bundleDefinition:
+      name: adash/ui/monitor/Component-preload.js
+      defaultFileTypes:
+      - ".js"
+      - ".json"
+      - ".xml"
+      - ".html"      
+      - ".library"
+      sections:
+      - mode: raw
+        filters:
+        - "webapp/**"
+      - mode: preload
+        filters:
+        - adash/ui/monitor/manifest.json        
+        - adash/ui/monitor/Component.js        
+        - adash/ui/monitor/controller/**
+        - adash/ui/monitor/css/**
+        - adash/ui/monitor/fragment/**        
+        - adash/ui/monitor/model/**
+        - adash/ui/monitor/view/**
+        resolve: false
+        sort: true
+    bundleOptions:
+     optimize: true
+     addTryCatchRestartWrapper: true
+     usePredefineCalls: true          
+
+

@@ -1,0 +1,33 @@
+{
+	"name": "adash-monitor",
+	"author" :  "xinitrc86 <felipe.dimmu@gmail.com>",
+	"version": "0.0.2",
+	"description": "ADASH Monitor",
+	"license" : "MIT",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/xinitrc86/adash-monitor.git"
+	  },	
+	"devDependencies": {
+		"@ui5/cli": "^2.2.6",
+		"eslint": "^7.1.0",
+		"node-qunit-puppeteer": "^2.0.2",
+		"qunit": "^2.10.0",
+		"start-server-and-test": "^1.11.0",
+		"ui5-middleware-route-proxy": "^1.0.6"
+	},
+	"scripts": {
+		"build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+		"lint": "eslint webapp",
+		"start": "ui5 serve",
+		"test": "node-qunit-puppeteer http://localhost:8080/test/testsuite.qunit.html",
+		"serveNTest": "start-server-and-test start http://localhost:8080 test"
+	},
+	"ui5": {
+		"dependencies": [
+			"ui5-middleware-route-proxy"
+		]
+	},
+	"dependencies": {
+	}
+}

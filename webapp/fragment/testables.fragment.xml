@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:grid="sap.ui.layout.cssgrid">
+	<f:GridList id="resultsTable" items="{/ZCV_ADASH_RESULTS_C}" busyIndicatorDelay="200" growing="true" growingScrollToLoad="true"
+		growingThreshold="30">
+		<f:customLayout>
+			<grid:GridBoxLayout boxesPerRowConfig="XL4 L3 M2 S1"/>
+		</f:customLayout>
+		<f:GridListItem type="Active" id="item0" press="onNavigateTo" class="sapUiTinyMargin">
+			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable" type="XML"/>
+		</f:GridListItem>
+	</f:GridList>
+</core:FragmentDefinition>

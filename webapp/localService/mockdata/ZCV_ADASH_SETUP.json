@@ -1,0 +1,25 @@
+[
+        {
+          "currentExecutionGuid" : "LAST",
+          "name" : "zadash",
+          "keepHistory" : "",
+          "coverageNeutralLimit" : 60,
+          "type" : "DEVC"
+        },
+        {
+            "currentExecutionGuid" : "LAST",
+            "name" : "zother_pkg",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          },
+          {
+            "currentExecutionGuid" : "LAST",
+            "name" : "za_third_one",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          }                  
+    
+    
+]

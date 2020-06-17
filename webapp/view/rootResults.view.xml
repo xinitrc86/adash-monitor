@@ -1,0 +1,37 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="adash.ui.monitor.controller.rootResults"
+	displayBlock="true">
+	<Shell id="shell" appWidthLimited="false">
+		<App id="app" backgroundOpacity="0">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<customHeader>
+						<Toolbar>
+							<HBox id="headerBox">
+								<FlexBox id="titleBox"></FlexBox>
+							</HBox>
+						</Toolbar>
+					</customHeader>
+					<subHeader>
+						<OverflowToolbar>
+							<ToggleButton icon="sap-icon://synchronize" 
+							tooltip="Fetches results every 2 minutes"
+							pressed="._autoRefresh" text="Auto refresh" press="onToggleAutoRefresh"/>
+							<ToolbarSpacer/>
+							<Label text="Sorting order"/>
+							<ComboBox id="sortingCombo" selectedKey="failing" change="onFilterChange">
+								<items>
+									<core:Item key="failing" text="Failing"/>
+									<core:Item key="uncovered" text="Uncovered"/>
+									<core:Item key="type" text="Type"/>
+								</items>
+							</ComboBox>
+						</OverflowToolbar>
+					</subHeader>
+					<content>
+						<core:Fragment fragmentName="adash.ui.monitor.fragment.testables" type="XML"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

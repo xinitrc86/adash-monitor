@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+ <edmx:Reference Uri="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+ </edmx:Reference>
+ <edmx:Reference Uri="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+ </edmx:Reference>
+ <edmx:DataServices m:DataServiceVersion="2.0">
+  <Schema Namespace="ZCV_ADASH_TEST_METHODS_C_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+   <EntityType Name="ZCV_ADASH_TEST_METHODS_CType" sap:label="Test methods of an entry" sap:content-version="1">
+    <Key>
+     <PropertyRef Name="execution"/>
+     <PropertyRef Name="name"/>
+     <PropertyRef Name="type"/>
+     <PropertyRef Name="testClass"/>
+     <PropertyRef Name="testMethod"/>
+    </Key>
+    <Property Name="execution" Type="Edm.String" Nullable="false" MaxLength="32" sap:display-format="UpperCase"/>
+    <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Object Name" sap:quickinfo="Object Name in Object Directory"/>
+    <Property Name="type" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Object Type"/>
+    <Property Name="testClass" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Class/Interface" sap:quickinfo="Object Type Name"/>
+    <Property Name="testMethod" Type="Edm.String" Nullable="false" MaxLength="61" sap:display-format="UpperCase" sap:label="Interface Component" sap:quickinfo="Full Component Name"/>
+    <Property Name="status" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Status" sap:quickinfo="Test status"/>
+    <Property Name="failureHeader" Type="Edm.String" MaxLength="1250" sap:display-format="UpperCase" sap:label="" sap:quickinfo="Character field, length 1250"/>
+    <Property Name="failureDetails" Type="Edm.String" MaxLength="1250" sap:display-format="UpperCase" sap:label="" sap:quickinfo="Character field, length 1250"/>
+   </EntityType>
+   <EntityContainer Name="ZCV_ADASH_TEST_METHODS_C_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+    <EntitySet Name="ZCV_ADASH_TEST_METHODS_C" EntityType="ZCV_ADASH_TEST_METHODS_C_CDS.ZCV_ADASH_TEST_METHODS_CType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+   </EntityContainer>
+   <atom:link rel="self" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+   <atom:link rel="latest-version" href="http://cdi2dbldapp11.bold.d1.ad.local:8000/sap/opu/odata/sap/ZCV_ADASH_TEST_METHODS_C_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+  </Schema>
+ </edmx:DataServices>
+</edmx:Edmx>
