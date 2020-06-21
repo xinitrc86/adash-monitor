@@ -2,7 +2,7 @@
 	xmlns="sap.m">
 	<VBox justifyContent="Start" width="100%" class="sapUiSmallMargin">
 		<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.identification" type="XML"/>
-		<HBox alignContent="Start" justifyContent="SpaceAround" alignItems="Center" class="sapUiSmallMarginTop sapUiSmallMarginEnd">
+		<HBox alignContent="Start" justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginTop sapUiSmallMarginEnd">
 			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.testResult" type="XML"/>
 			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.coverageResult" type="XML"/>
 		</HBox>
