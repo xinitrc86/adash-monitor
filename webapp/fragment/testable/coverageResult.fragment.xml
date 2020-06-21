@@ -1,7 +1,8 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" 
 	xmlns="sap.m" 
 	xmlns:si="sap.suite.ui.commons.statusindicator">
-	<HBox width="100%" justifyContent="Start" alignItems="Center" >
+	<HBox width="55%"  alignItems="Center" >
+	<HBox>
 		<si:StatusIndicator value="{coveragePercentage}" width="6rem" height="6rem">
 			<si:ShapeGroup>
 				<si:LibraryShape shapeId="cereals"/>
@@ -11,7 +12,8 @@
 				<si:PropertyThreshold fillColor="Good" toValue="100"/>
 			</si:propertyThresholds>
 		</si:StatusIndicator>
-		<VBox alignItems="Start" justifyContent="Center" class="sapUiMediumMarginEnd">
+		</HBox>
+		<VBox alignItems="Start"> 
 			<ObjectStatus text="Coverage: {coveragePercentage} %" state="{= ${coveragePercentage} > 60 ? 'Success' : 'None' }"/>
 			<ObjectAttribute title="Statements" text="{statements}"/>
 			<ObjectAttribute title="Covered" text="{covered}"/>
