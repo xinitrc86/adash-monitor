@@ -1,16 +1,15 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-		<HBox width="100%" height="100%" alignItems="Center" class="sapUiSmallMarginEnd" justifyContent="Start" alignContent="Center">
-			<VBox class="sapUiSmallMargin" width="100%">
-				<HBox class="sapUiTinyMarginTop" width="100%">
-					<VBox>
-						<core:Icon color="Default" size="3em" src="{= ${type} === 1 ? 'sap-icon://folder-blank' : 'sap-icon://document-text' }"/>
-					</VBox>
-					<VBox width="100%" alignContent="Start" class="sapUiMediumMarginBegin">
-							<Label text="{name}" design="Bold" />
-							<Text text="{description}"/>
-					</VBox>
-					<Button icon="sap-icon://synchronize" type="Accept" tooltip="Test again" press=".onTestPackage"/>
-				</HBox>
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+	xmlns="sap.m">
+	<HBox justifyContent="SpaceBetween" class="sapUiMediumMarginEnd">
+		<HBox alignItems="Center">
+			<core:Icon color="Default" size="3em" src="{= ${type} === 1 ? 'sap-icon://folder-blank' : 'sap-icon://document-text' }"/>
+			<VBox alignContent="Start" class="sapUiSmallMarginBegin">
+				<Label text="{name}" design="Bold" />
+				<Text text="{description}"/>
 			</VBox>
 		</HBox>
+		<HBox>
+			<Button icon="sap-icon://synchronize" type="Accept" tooltip="Test again" press=".onTestPackage"/>
+		</HBox>
+	</HBox>
 </core:FragmentDefinition>

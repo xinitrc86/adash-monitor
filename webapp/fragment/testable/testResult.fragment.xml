@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" 
 	xmlns="sap.m" 
 	xmlns:si="sap.suite.ui.commons.statusindicator">
-	<HBox width="100%" justifyContent="Start">
+	<HBox width="100%" justifyContent="Start" alignItems="Center" >
 		<si:StatusIndicator value="{= Math.max(${failed} === 0 ? 0 : 50,parseInt(${passingPercentage})) }" width="6rem" height="6rem">
 			<si:ShapeGroup>
 				<si:LibraryShape shapeId="success"/>
