@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+	xmlns="sap.m" 
+	xmlns:si="sap.suite.ui.commons.statusindicator">
+	<HBox width="100%" justifyContent="Start">
+		<si:StatusIndicator value="{= Math.max(${failed} === 0 ? 0 : 50,parseInt(${passingPercentage})) }" width="6rem" height="6rem">
+			<si:ShapeGroup>
+				<si:LibraryShape shapeId="success"/>
+			</si:ShapeGroup>
+			<si:propertyThresholds>
+				<si:PropertyThreshold fillColor="Error" toValue="99"/>
+				<si:PropertyThreshold fillColor="Good" toValue="100"/>
+			</si:propertyThresholds>
+		</si:StatusIndicator>
+		<VBox alignItems="Start" justifyContent="Center" class="sapUiTinyMarginBegin">
+			<ObjectStatus text="{= ${failed} > 0 ? 'FAILED' : ( ${passed} > 0 ? 'PASSED' : 'NEUTRAL' ) }" state="{= ${failed} > 0 ? 'Error' : ( ${passed} > 0 ? 'Success' : 'None' ) }"/>
+			<ObjectAttribute title="Total" text="{total}"/>
+			<ObjectAttribute title="Passing" text="{passed}"/>
+			<ObjectAttribute title="Failing" text="{failed}"/>
+		</VBox>
+	</HBox>
+</core:FragmentDefinition>

@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+	xmlns="sap.m">
+	<VBox justifyContent="Start" width="100%" class="sapUiSmallMargin">
+		<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.identification" type="XML"/>
+		<HBox width="100%" justifyContent="Start" class="sapUiSmallMarginBottom sapUiSmallMarginTop sapUiSmallMarginEnd">
+			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.testResult" type="XML"/>
+			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.coverageResult" type="XML"/>
+		</HBox>
+	</VBox>
+</core:FragmentDefinition>
