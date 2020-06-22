@@ -56,6 +56,7 @@ builder:
         - adash/ui/monitor/Component.js        
         - adash/ui/monitor/controller/**/
         - adash/ui/monitor/css/**/
+        - adash/ui/monitor/i18n/**/
         - adash/ui/monitor/fragment/**/        
         - adash/ui/monitor/model/**/
         - adash/ui/monitor/view/**/
