@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" 
 	xmlns="sap.m">
-	<VBox justifyContent="Start" width="100%" class="sapUiSmallMargin">
+	<VBox justifyContent="Start" class="sapUiSmallMargin">
 		<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.identification" type="XML"/>
 		<HBox alignContent="Start" justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginTop sapUiSmallMarginEnd">
 			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.testResult" type="XML"/>

@@ -4,7 +4,7 @@
 		<f:customLayout>
 			<grid:GridBoxLayout boxesPerRowConfig="XL4 L3 M2 S1"/>
 		</f:customLayout>
-		<f:GridListItem type="Active" id="item0" press="onNavigateTo" class="sapUiTinyMargin">
+		<f:GridListItem type="Active" press="onNavigateTo" class="sapUiTinyMargin">
 			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.main" type="XML"/>
 		</f:GridListItem>
 	</f:GridList>
