@@ -54,11 +54,11 @@ builder:
         filters:
         - adash/ui/monitor/manifest.json        
         - adash/ui/monitor/Component.js        
-        - adash/ui/monitor/controller/**
-        - adash/ui/monitor/css/**
-        - adash/ui/monitor/fragment/**        
-        - adash/ui/monitor/model/**
-        - adash/ui/monitor/view/**
+        - adash/ui/monitor/controller/**/
+        - adash/ui/monitor/css/**/
+        - adash/ui/monitor/fragment/**/        
+        - adash/ui/monitor/model/**/
+        - adash/ui/monitor/view/**/
         resolve: false
         sort: true
     bundleOptions:
