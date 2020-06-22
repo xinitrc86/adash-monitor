@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" 
 	xmlns="sap.m">
-	<HBox justifyContent="SpaceBetween" class="sapUiMediumMarginEnd">
+	<HBox justifyContent="SpaceBetween">
 		<HBox alignItems="Center">
 			<core:Icon color="Default" size="3em" src="{= ${type} === 1 ? 'sap-icon://folder-blank' : 'sap-icon://document-text' }"/>
 			<VBox alignContent="Start" class="sapUiSmallMarginBegin">

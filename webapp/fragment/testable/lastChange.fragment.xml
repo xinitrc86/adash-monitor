@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+    xmlns="sap.m">
+    <Text class="sapUiTinyMarginTop" 
+        wrappingType="Hyphenated" 
+        maxLines="2" 
+        renderWhitespace="false" 
+        textAlign="End" 
+        text="{
+                    parts: [{path:'i18n>LAST_CHANGE'},
+                            {path:'lastChangeDate',
+                            type: 'sap.ui.model.type.Date',
+                            formatOptions:{
+                                relative: true
+                            }},
+                            {path:'i18n>_BY_'},
+                            {path:'lastChangeAuthor'},
+                            {path:'i18n>DOT'},
+                            {path:'lastChangeId'}]
+
+        }" 
+    />
+    <Text 
+        maxLines="1" 
+        renderWhitespace="false" 
+        textAlign="End" 
+        text="{lastChangeDescription}"
+    />
+
+</core:FragmentDefinition>

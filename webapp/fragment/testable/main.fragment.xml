@@ -1,10 +1,13 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" 
 	xmlns="sap.m">
-	<VBox justifyContent="Start" class="sapUiSmallMargin">
+	<VBox justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiTinyMarginBottom">
 		<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.identification" type="XML"/>
-		<HBox alignContent="Start" justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginTop sapUiSmallMarginEnd">
+		<HBox alignContent="Start" justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMarginTop sapUiTinyMarginEnd">
 			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.testResult" type="XML"/>
 			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.coverageResult" type="XML"/>
 		</HBox>
+		<VBox alignContent="End" alignItems="End">
+			<core:Fragment fragmentName="adash.ui.monitor.fragment.testable.lastChange" type="XML"/>
+		</VBox>
 	</VBox>
 </core:FragmentDefinition>
