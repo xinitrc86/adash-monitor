@@ -9,7 +9,7 @@
 			</VBox>
 		</HBox>
 		<HBox>
-			<Button icon="sap-icon://synchronize" type="Accept" tooltip="Test again" press=".onTestPackage"/>
+			<Button icon="sap-icon://restart" type="Accept" tooltip="Test again" press=".onTestPackage"/>
 		</HBox>
 	</HBox>
 </core:FragmentDefinition>
