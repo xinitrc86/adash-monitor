@@ -1,7 +1,7 @@
 {
 	"name": "adash-monitor",
 	"author" :  "xinitrc86 <felipe.dimmu@gmail.com>",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "ADASH Monitor",
 	"license" : "MIT",
 	"repository": {
