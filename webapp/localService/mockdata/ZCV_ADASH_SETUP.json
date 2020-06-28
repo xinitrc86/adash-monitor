@@ -1,25 +1,44 @@
 [
         {
           "currentExecutionGuid" : "LAST",
-          "name" : "zadash",
+          "name" : "ZADASH",
           "keepHistory" : "",
           "coverageNeutralLimit" : 60,
           "type" : "DEVC"
         },
         {
             "currentExecutionGuid" : "LAST",
-            "name" : "zother_pkg",
+            "name" : "ZFINANCE",
             "keepHistory" : "",
             "coverageNeutralLimit" : 60,
             "type" : "DEVC"
           },
           {
             "currentExecutionGuid" : "LAST",
-            "name" : "za_third_one",
+            "name" : "ZDEMO",
             "keepHistory" : "",
             "coverageNeutralLimit" : 60,
             "type" : "DEVC"
-          }                  
-    
-    
+          },
+          {
+            "currentExecutionGuid" : "LAST",
+            "name" : "ZPROCUREMENT",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          },
+          {
+            "currentExecutionGuid" : "LAST",
+            "name" : "ZCROSS_APPLICATION",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          },
+          {
+            "currentExecutionGuid" : "LAST",
+            "name" : "ZPLANT_MAINTENANCE",
+            "keepHistory" : "",
+            "coverageNeutralLimit" : 60,
+            "type" : "DEVC"
+          } 
 ]

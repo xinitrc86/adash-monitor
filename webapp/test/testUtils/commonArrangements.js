@@ -13,7 +13,7 @@ sap.ui.define([
         var STANDARD_RESPONSE_DELAY_TIME = 20;
 
         return Opa5.extend(
-            "sap.ui.fip.test.testUtils.commonArrangements",
+            "adash.ui.monitor.test.testUtils.commonArrangements",
             {
 
             constructor: function(oConfig) {
