@@ -33,7 +33,8 @@ sap.ui.define([
 				else {
 					let packageGroup = data.getSource().getData();
 					let aPackages = packageGroup.map(name => {
-						return new sap.ui.model.Filter("name", "EQ", name.toUpperCase());
+						var sname = encodeURI(name);
+						return new sap.ui.model.Filter("name", "EQ", sname.toUpperCase());
 					});
 					that._setRootDisplayPackages(aPackages);
 				}
