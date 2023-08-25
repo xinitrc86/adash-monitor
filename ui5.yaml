@@ -22,13 +22,13 @@ server:
       /sap/opu/: 
         target: ADASH_HOST
         auth:    
-          client: 200
+          client: '001'
           user: ADASH_USERNAME
           pass: ADASH_PASSWORD
       /sap/zadash/: 
         target: ADASH_HOST
         auth:    
-          client: 200      
+          client: '001'      
           user: ADASH_USERNAME
           pass: ADASH_PASSWORD
 builder:

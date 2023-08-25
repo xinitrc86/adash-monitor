@@ -1,20 +1,20 @@
 {
 	"name": "adash-monitor",
-	"author" :  "xinitrc86 <felipe.dimmu@gmail.com>",
+	"author": "xinitrc86 <felipe.dimmu@gmail.com>",
 	"version": "0.0.7",
 	"description": "ADASH Monitor",
-	"license" : "MIT",
+	"license": "MIT",
 	"repository": {
-		"type" : "git",
-		"url" : "https://github.com/xinitrc86/adash-monitor.git"
-	  },	
+		"type": "git",
+		"url": "https://github.com/xinitrc86/adash-monitor.git"
+	},
 	"devDependencies": {
-		"@ui5/cli": "^2.2.6",
+		"@ui5/cli": "^3.5.0",
 		"eslint": "^7.1.0",
 		"node-qunit-puppeteer": "^2.0.2",
 		"qunit": "^2.10.0",
 		"start-server-and-test": "^1.11.0",
-		"ui5-middleware-route-proxy": "^1.0.6"
+		"ui5-middleware-route-proxy": "^1.0.10"
 	},
 	"scripts": {
 		"build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
@@ -27,7 +27,5 @@
 		"dependencies": [
 			"ui5-middleware-route-proxy"
 		]
-	},
-	"dependencies": {
 	}
 }
